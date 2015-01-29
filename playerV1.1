@@ -10,6 +10,7 @@ SoftwareSerial garanSerial(8, 9); // RX, TX
 #endif
 
 Garan player(garanSerial);
+//A4(SDA) A5(SCL)
 Adafruit_LSM303 lsm;
 
 
@@ -33,11 +34,11 @@ void loop() {
   
   Accelo();
   int volXval = ((int)lsm.accelData.x);
- int outputXValue = map(volXval, 1024,-1024, 0, 15); 
-   player.setVolume(outputXValue);
+  int outputXValue = map(volXval, 1024,-1024, 0, 15); 
+  player.setVolume(outputXValue);
   playermenu () ;
   
-   }
+}
 
 void Play (){
   
